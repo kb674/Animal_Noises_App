@@ -1,4 +1,6 @@
-#!/bin/bash
-
+# to deploy
 docker-compose up -d
 docker exec server python3 create.py
+
+# to cleanup
+docker-compose down --rm all

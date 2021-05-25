@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+    server:
+        build: ./server
+        container_name: server
+        ports:
+            - target: 5000
+              published: 5000
+              protocol: tcp
+    animal_api:
+        build: ./animal_api
+        container_name: animal-api
+        

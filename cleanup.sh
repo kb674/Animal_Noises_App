@@ -1,7 +1,7 @@
-#! /bin/bash
+ ani#! /bin/bash
 
-docker rm -f  animal-api server
+docker rm -f -r animal-api server
 
-docker rmi animal_noises_api  animal_noises_server
+docker rmi 
 
 docker network rm animal_noises_network

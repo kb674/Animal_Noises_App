@@ -1,5 +1,11 @@
 version: "3.8"
 services:
+    mysql:
+        image: mysql:5.7
+        environment: 
+            MYSQL_DATABASE: animal_db
+            MYSQL_ROOT_PASSWORD: password
+        container_name: mysql    
     server:
         build: ./server
         container_name: server
@@ -7,6 +13,8 @@ services:
             - target: 5000
               published: 5000
               protocol: tcp
+        environment:
+            DATABASE_URI: mysql+pymysql://root:password@mysql/animal_db
     animal_api:
         build: ./animal_api
         container_name: animal-api

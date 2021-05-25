@@ -2,6 +2,6 @@
 FROM python:latest
 WORKDIR /App
 COPY . .
-RUN pip install flask requests
+RUN pip install flask requests flask_sqlalchemy
 EXPOSE 5000
 ENTRYPOINT ["python", "app.py"]
